@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4-JS</title>
+</head>
+<body>
+
+    <h1>Task4-JS</h1>
+
+    <script>
+
+        function multiply(num1, num2) {
+          return num1 * num2;
+        }
+
+        function calculate(num1, num2, operation) {
+          return operation(num1, num2);
+        }
+
+        function displayResult(result) {
+          console.log('the result is ' + result);
+        }
+
+        const finalResult = calculate(5, 10, multiply);
+        displayResult(finalResult);
+
+
+        function greetUser() {
+          console.log('hello!');
+        }
+
+        setTimeout(greetUser, 3000);
+
+        let countdown = 10;
+        const countdownInterval = setInterval(function() {
+          console.log(countdown);
+          countdown--;
+
+          if (countdown < 0) {
+            clearInterval(countdownInterval);
+            console.log('time ended!');
+          }
+        }, 1000);
+
+        let countdown2 = 10;
+        let secondsPassed = 0;
+        const countdownInterval2 = setInterval(function() {
+          console.log(countdown2);
+          countdown2--;
+          secondsPassed++;
+
+          if (secondsPassed === 5) {
+            clearInterval(countdownInterval2);
+            console.log('يتم إيقاف العد بعد 5 ثواني.');
+          }
+        }, 1000);
+
+        const messageTimeout = setTimeout(function() {
+          console.log('---!');
+        }, 5000);
+
+        clearTimeout(messageTimeout);
+    </script>
+</body>
+</html>
